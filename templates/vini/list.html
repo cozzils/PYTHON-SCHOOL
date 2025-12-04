@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title>Database vini</title>
+</head>
+<body>
+    <h1>Database vini</h1>
+    <br>
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="list.html">Elenco vini</a></li>
+            <li><a href="#">Aggiungi vino</a></li>
+        </ul>
+    </nav>
+
+    <div class="tabella-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Tipologia</th>
+                    <th>Regione</th>
+                    <th>Scorta</th>
+                    <th>Costo unitario</th>
+                    <th>Costo totale</th>
+                    <th>Azioni</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for vino in vini %}
+                <tr>
+                    <td></td>
+                    <td>{(vino.nome)}</td>
+                    <td>{(vino.tipologia)}</td>
+                    <td>{(vino.scorta)}</td>
+                    <td>{(vino.costo_unitario)}</td>
+                    <td>{(vino.costo_totale)}</td>
+                    <td>
+                        <button class="modifica">Modifica</button>
+                        <button class="elimina">Elimina</button>
+                    </td>
+                </tr>
+                {% endfor%}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
